@@ -1,0 +1,19 @@
+{
+  "name": "learn-to-react",
+  "version": "1.0.0",
+  "description": "ReactJS tutorial project",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "learn-to-react"
+  },
+  "keywords": [
+    "reactJS",
+    "training"
+  ],
+  "author": "Antalut Razvan",
+  "license": "MIT"
+}
