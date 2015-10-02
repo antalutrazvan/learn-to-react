@@ -8,12 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "learn-to-react"
+    "url": "https://github.com/antalutrazvan/learn-to-react.git"
   },
   "keywords": [
     "reactJS",
     "training"
   ],
   "author": "Antalut Razvan",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.5.3"
+  }
 }
