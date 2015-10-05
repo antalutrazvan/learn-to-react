@@ -1,64 +1,65 @@
-class MessageInput extends React.Component {
-    constructor() {
-      super();
-      this._bind('handleHeadingChange','handleMessageChange','handleSend');
-      this.state = {
-        heading: '',
-        message: ''
-      };
-    }
+import BindingComponent from './binding_component';
 
-    _bind(...methods) {
-      methods.forEach((method) => this[method] = this[method].bind(this));
-    }
+class MessageInput extends BindingComponent {
+  constructor() {
+    super();
+    this._bind('handleHeadingChange', 'handleMessageChange', 'handleSend');
+    this.state = this.getInitialState();
+  }
 
-    getInitialState() {
-      return ({
-        heading: '',
-        message: ''
-      });
-    }
+  getInitialState() {
+    return ({
+      heading: '',
+      message: ''
+    });
+  }
 
-    handleHeadingChange(event) {
+  handleHeadingChange(event) {
     this.setState({
-        heading: event.target.value
-      });
+      heading: event.target.value
+    });
 
-    }
-    handleMessageChange(event) {
-      this.setState({
-        message: event.target.value
-      });
+  }
 
-    }
-    handleSend() {
-      this.props.onSendCallback(this.state.heading, this.state.message);
-      this.setState(this.getInitialState());
-    }
+  handleMessageChange(event) {
+    this.setState({
+      message: event.target.value
+    });
 
-    render() {
-      return ( < div className = "MessageInput" >
-        < label className = "label" > Title: < /label>  < br / > < input className = "text-input"
-        type = "text"
-        onChange={this.handleHeadingChange}
-        value = {this.state.heading} > < /input> < br / >
-        < label className = "label" > Message: < /label>  < br / > < input className = "text-input"
-        type = "text"
-        ref="messageInput"
-        onChange={this.handleMessageChange}
-        value = {
-          this.state.message
-        } > < /input>
-        < button className = "button-send"
-        onClick = {
-          this.handleSend
-        } > Send < /button> < /div>);
+  }
+
+  handleSend() {
+    this.props.onSendCallback(this.state.heading, this.state.message);
+    this.setState(this.getInitialState());
+  }
+
+  render() {
+    return ( < div className = "MessageInput" >
+      < label className = "label" > Title: < /label>  < br / > < input className = "text-input"
+      type = "text"
+      onChange = {
+        this.handleHeadingChange
       }
+      value = {
+        this.state.heading
+      } > < /input> < br / >
+      < label className = "label" > Message: < /label>  < br / > < input className = "text-input"
+      type = "text"
+      onChange = {
+        this.handleMessageChange
+      }
+      value = {
+        this.state.message
+      } > < /input> < button className = "button-send"
+      onClick = {
+        this.handleSend
+      } > Send < /button> < /div > );
+  }
 
-    }
-    // MessageInput.propTypes = {
-    //   onSendCallback: React.PropTypes.func.isRequired
-    // };
+}
+MessageInput.propTypes = {
+  onSendCallback: React.PropTypes.func.isRequired
+};
 
 
-    export default MessageInput;
+export default MessageInput;

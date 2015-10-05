@@ -1,16 +1,13 @@
 import MessageList from './message_list';
 import MessageInput from './message_input';
+import BindingComponent from './binding_component';
 
-class MessageBox extends React.Component{
+class MessageBox extends BindingComponent{
   constructor(){
     super();
     this._bind('addMessage');
     this.state = this.getInitialState();
   };
-
-  _bind(...methods) {
-    methods.forEach((method) => this[method] = this[method].bind(this));
-  }
 
   getInitialState(){
     return({

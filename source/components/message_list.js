@@ -1,4 +1,5 @@
 import Message from './message';
+
 class MessageList extends React.Component {
     render() {
       var messageNodes = this.props.data.map(function (item) {
@@ -12,4 +13,4 @@ class MessageList extends React.Component {
   }
 }
 
-    export default MessageList;
+export default MessageList;
