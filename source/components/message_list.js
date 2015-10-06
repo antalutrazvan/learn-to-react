@@ -1,4 +1,5 @@
 import Message from './message';
+import styles from '../styles/styles.js';
 
 class MessageList extends React.Component {
     render() {
@@ -8,7 +9,7 @@ class MessageList extends React.Component {
       );
     });
 
-    return ( <ul className="messageList" > {messageNodes} </ul>);
+    return ( <ul style={styles.messageList} className="messageList" > {messageNodes} </ul>);
 
   }
 }

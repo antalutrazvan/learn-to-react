@@ -1,4 +1,5 @@
 import BindingComponent from './binding_component';
+import styles from '../styles/styles';
 
 class MessageInput extends BindingComponent {
   constructor() {
@@ -36,6 +37,7 @@ class MessageInput extends BindingComponent {
   render() {
     return ( < div className = "MessageInput" >
       < label className = "label" > Title: < /label>  < br / > < input className = "text-input"
+      style={styles.messageInput.input}
       type = "text"
       onChange = {
         this.handleHeadingChange

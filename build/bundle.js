@@ -69,9 +69,15 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _stylesStylesJs = require('../styles/styles.js');
+
+var _stylesStylesJs2 = _interopRequireDefault(_stylesStylesJs);
 
 var Message = (function (_React$Component) {
   _inherits(Message, _React$Component);
@@ -85,9 +91,10 @@ var Message = (function (_React$Component) {
   _createClass(Message, [{
     key: "render",
     value: function render() {
+
       return React.createElement(
         "li",
-        { className: "message" },
+        { style: _stylesStylesJs2["default"].message, className: "message" },
         React.createElement(
           "h3",
           null,
@@ -112,7 +119,7 @@ Message.propTypes = {
 exports["default"] = Message;
 module.exports = exports["default"];
 
-},{}],4:[function(require,module,exports){
+},{"../styles/styles.js":7}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -156,7 +163,7 @@ var MessageBox = (function (_BindingComponent) {
     key: 'getInitialState',
     value: function getInitialState() {
       return {
-        data: [{ heading: 'Hello', message: 'Hey there!' }, { heading: 'Hello', message: 'Hey there to you too!' }, { heading: 'GoodBye', message: 'See ya!' }, { heading: 'BoodBye', message: 'So long!' }]
+        data: [{ heading: 'Hello', message: 'Hey there!' }, { heading: 'Hello', message: 'Hey there to you too!' }, { heading: 'GoodBye', message: 'See ya!' }, { heading: 'GoodBye', message: 'So long!' }]
       };
     }
   }, {
@@ -214,6 +221,10 @@ var _binding_component = require('./binding_component');
 
 var _binding_component2 = _interopRequireDefault(_binding_component);
 
+var _stylesStyles = require('../styles/styles');
+
+var _stylesStyles2 = _interopRequireDefault(_stylesStyles);
+
 var MessageInput = (function (_BindingComponent) {
   _inherits(MessageInput, _BindingComponent);
 
@@ -270,6 +281,7 @@ var MessageInput = (function (_BindingComponent) {
         React.createElement(
           'input',
           { className: 'text-input',
+            style: _stylesStyles2['default'].messageInput.input,
             type: 'text',
             onChange: this.handleHeadingChange,
             value: this.state.heading },
@@ -315,26 +327,30 @@ MessageInput.propTypes = {
 exports['default'] = MessageInput;
 module.exports = exports['default'];
 
-},{"./binding_component":2}],6:[function(require,module,exports){
-"use strict";
+},{"../styles/styles":7,"./binding_component":2}],6:[function(require,module,exports){
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _message = require('./message');
 
 var _message2 = _interopRequireDefault(_message);
+
+var _stylesStylesJs = require('../styles/styles.js');
+
+var _stylesStylesJs2 = _interopRequireDefault(_stylesStylesJs);
 
 var MessageList = (function (_React$Component) {
   _inherits(MessageList, _React$Component);
@@ -342,22 +358,22 @@ var MessageList = (function (_React$Component) {
   function MessageList() {
     _classCallCheck(this, MessageList);
 
-    _get(Object.getPrototypeOf(MessageList.prototype), "constructor", this).apply(this, arguments);
+    _get(Object.getPrototypeOf(MessageList.prototype), 'constructor', this).apply(this, arguments);
   }
 
   _createClass(MessageList, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       var messageNodes = this.props.data.map(function (item) {
-        return React.createElement(_message2["default"], { heading: item.heading, message: item.message });
+        return React.createElement(_message2['default'], { heading: item.heading, message: item.message });
       });
 
       return React.createElement(
-        "ul",
-        { className: "messageList" },
-        " ",
+        'ul',
+        { style: _stylesStylesJs2['default'].messageList, className: 'messageList' },
+        ' ',
         messageNodes,
-        " "
+        ' '
       );
     }
   }]);
@@ -365,7 +381,35 @@ var MessageList = (function (_React$Component) {
   return MessageList;
 })(React.Component);
 
-exports["default"] = MessageList;
-module.exports = exports["default"];
+exports['default'] = MessageList;
+module.exports = exports['default'];
 
-},{"./message":3}]},{},[1]);
+},{"../styles/styles.js":7,"./message":3}],7:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+var styles = {
+  message: {
+    color: 'black',
+    height: 'auto',
+    width: 300,
+    margin: '10px auto 5px 10px',
+    padding: 3,
+    border: '1px solid #d1d4d6',
+    boxShadow: '3px 3px 5px #d1d4d6'
+  },
+  messageInput: {
+    border: '1px solid #d1d4d6',
+    boxShadow: '2px 2px 4px #d1d4d6'
+  },
+  messageList: {
+    listStyleType: 'none'
+  }
+};
+
+exports['default'] = styles;
+module.exports = exports['default'];
+
+},{}]},{},[1]);
